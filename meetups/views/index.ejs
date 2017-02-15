@@ -5,13 +5,17 @@
     </head>
     <body>
         <% include partials/template/header.ejs %>
+        <% include partials/content/speakerList.ejs %>
 
         <section class="layout">
             <div class="primary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nunc dolor. Suspendisse cursus tincidunt maximus. Integer quis tortor non erat scelerisque bibendum vitae et nunc. Sed elit lectus, consequat vitae libero sed, sagittis vestibulum risus. Phasellus sed eros eu eros ullamcorper auctor.
+                <% include partials/content/whoAreWe.ejs %>
+                <% include partials/content/getBusy.ejs %>
+                <% include partials/content/whoShouldCome.ejs %>
             </div>
             <aside class="secondary">
-                Duis eget fermentum neque. Mauris ut condimentum metus, eget bibendum est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris congue at massa non efficitur. Aliquam pharetra, magna nec vehicula gravida, arcu velit elementum enim, quis posuere turpis libero sit amet ipsum.
+                <% include partials/content/nextMeeting.ejs %>
+                <% include partials/content/artworkList.ejs %>
             </aside>
         </section>
 
