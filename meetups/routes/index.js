@@ -16,29 +16,39 @@ router.get('/', function(req, res, next) {
     res.render('index', {
         title: 'Home',
         artwork: myArtwork,
-        artists: myArtists
+        artists: myArtists,
+        page: 'home'
     });
 });
 
 /* GET speakers page */
 router.get('/speakers', function(req, res, next) {
     var myArtwork = [];
+    var myArtists = [];
+
+    myArtists = appdata.speakers;
+
     appdata.speakers.forEach(function (item) {
         myArtwork = myArtwork.concat(item.artwork);
     });
 
     res.render('speakers', {
         title: 'Speakers',
-        artwork: myArtwork
+        artwork: myArtwork,
+        artists: myArtists,
+        page: 'artistlist'
     });
 });
 
 /* GET speakers detail page */
 router.get('/speakers/:speakerid', function(req, res, next) {
     var myArtwork = [];
+    var myArtists = [];
+
+
     appdata.speakers.forEach(function (item) {
         if (item.shortname == req.params.speakerid) {
-            marArtists.push(item);
+            myArtists.push(item);
             myArtwork = myArtwork.concat(item.artwork);
         }
     });
@@ -46,7 +56,8 @@ router.get('/speakers/:speakerid', function(req, res, next) {
     res.render('speakers', {
         title: 'Speakers',
         artwork: myArtwork,
-        artists: myArtists
+        artists: myArtists,
+        page: 'artistdetail'
     });
 });
 
