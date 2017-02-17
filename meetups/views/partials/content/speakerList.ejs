@@ -4,6 +4,7 @@
             <% artists.forEach(function(item) { %>
                 <article class="artist group">
                     <h3>
+                        <%= item.title %>
                         <span class="small">with
                             <a href="/speakers/<%= item.shortname %>">
                                 <%= item.name %>
