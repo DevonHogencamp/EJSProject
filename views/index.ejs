@@ -19,29 +19,23 @@
  -->
 
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="myApp">
     <head>
         <% include partials/template/head.ejs %>
     </head>
-    <body class="<%= page %>">
+    <body>
         <% include partials/template/header.ejs %>
-        <% include partials/content/speakerList.ejs %>
-
         <section class="layout">
-            <div class="primary">
-                <% include partials/content/whoAreWe.ejs %>
-                <p>{{ 5 * 5 }}</p>
-                <% include partials/content/getBusy.ejs %>
-                <% include partials/content/whoShouldCome.ejs %>
+            <div ng-view class="primary">
+                <%# %>
             </div>
             <aside class="secondary">
                 <% include partials/content/nextMeeting.ejs %>
-
                 <% include partials/content/socialMedia.ejs %>
-
                 <% include partials/content/artworkList.ejs %>
             </aside>
         </section>
+
 
         <% include partials/template/footer.ejs %>
         <% include partials/template/jsdefaults.ejs %>
