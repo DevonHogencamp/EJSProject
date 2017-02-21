@@ -19,7 +19,7 @@
  -->
 
 <!DOCTYPE html>
-<html>
+<html ng-app>
     <head>
         <% include partials/template/head.ejs %>
     </head>
@@ -30,6 +30,7 @@
         <section class="layout">
             <div class="primary">
                 <% include partials/content/whoAreWe.ejs %>
+                <p>{{ 5 * 5 }}</p>
                 <% include partials/content/getBusy.ejs %>
                 <% include partials/content/whoShouldCome.ejs %>
             </div>
