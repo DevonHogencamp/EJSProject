@@ -1,23 +1,24 @@
 var myApp = angular.module('myApp', [
-    'ngRoute',
-    // 'Controllers'
+    'ngRoute'
+    // 'artistControllers'
 ]);
 
 myApp.config(['$routeProvider', function($routeProvider){
     $routeProvider
 
-    .when('/', {
-        templateUrl: 'partials/content/home.ejs',
+    .when('/home', {
+        templateUrl: 'partials/home.ejs',
         // controller: 'listController'
     })
-    .when('/speakers', {
-        templateUrl: 'partials/speakers.ejs',
-    })
-    .when('/speakers/:speakerid', {
-        templateUrl: 'partials/content/speakerslist.ejs',
-        // controller: 'detailsController'
-    })
+    // .when('/speakers', {
+    //     templateUrl: 'partials/speakers.ejs',
+    //     controller: 'listController'
+    // })
+    // .when('/speakers/:speakerid', {
+    //     templateUrl: 'partials/content/speakerslist.ejs',
+    //     controller: 'listController'
+    // })
     .otherwise({
-        redirectTo: '/'
+        redirectTo: '/home'
     });
 }]);

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<article class="speakerslist">
+    <section class="layout">
+        <div class="speakers">
+            <article class="artist group" ng-repeat="item in artists">
+                <h3>
+                    {{item.title}}
+                    <span class="small">with
+                        <a ng-href="#!/speakers/{{item.shortname}}">
+                            {{item.name}}
+                        </a>
+                    </span>
+                </h3>
+
+                <p>
+                    <a ng-href="#!/speakers/{{item.shortname}}">
+                        <img class="speaker" ng-src="/images/speakers/{{item.shortname}}_tn.jpg" alt="">
+                    </a>
+
+                    <ng-show ng-show="window.location.href!='#!/home'">
+                        <ng-show ng-show="window.location.href!='#!/speakers'">
+                            {{item.summary}}
+                        </ng-show>
+                        <ng-show ng-show="window.location.href!='#!/speakers/{{item.shortname}}'">
+                            {{item.description}}
+                        </ng-show>
+                    </ng-show>
+                </p>
+            </article>
+        </div>
+    </section>
+</article>
