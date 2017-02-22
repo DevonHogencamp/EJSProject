@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', [
-    'ngRoute'
-    // 'artistControllers'
+    'ngRoute',
+    'artistControllers'
 ]);
 
 myApp.config(['$routeProvider', function($routeProvider){
@@ -8,16 +8,16 @@ myApp.config(['$routeProvider', function($routeProvider){
 
     .when('/home', {
         templateUrl: 'partials/home.ejs',
-        // controller: 'listController'
+        controller: 'listController'
     })
-    // .when('/speakers', {
-    //     templateUrl: 'partials/speakers.ejs',
-    //     controller: 'listController'
-    // })
-    // .when('/speakers/:speakerid', {
-    //     templateUrl: 'partials/content/speakerslist.ejs',
-    //     controller: 'listController'
-    // })
+    .when('/speakers', {
+        templateUrl: 'partials/speakers.ejs',
+        controller: 'listController'
+    })
+    .when('/speakers/:speakerid', {
+        templateUrl: 'partials/content/speakerslist.ejs',
+        controller: 'listController'
+    })
     .otherwise({
         redirectTo: '/home'
     });
