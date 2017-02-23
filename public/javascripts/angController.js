@@ -1,28 +1,39 @@
 // Create a new module
-var artistControllers = angular.module('artistControllers', [
-    'ngRoute'
-]);
+var artistControllers = angular.module('artistControllers', []);
 
-artistControllers.controller('listController', ['$scope', '$http', function listController($scope, $http) {
-    $scope.home = true;
-
+artistControllers.controller('listControllerHome', ['$scope', '$http', function listController($scope, $http) {
     $scope.class = 'speakerslist';
-
     $http.get('/data.json').then(function(res){
         $scope.artists = res.data.speakers;
-        $scope.artistOrder = "name";
+        $scope.home= true;
+
     }, function(result){
-        console.log('http request failed with result: ' + result);
+        console.log('http request failed with result: ' + res);
     });
 }]);
 
-artistControllers.controller('speakersController', ['$scope', '$http', function listController($scope, $http) {
-    $scope.speakers = true;
-
+artistControllers.controller('listControllerSpeakers', ['$scope', '$http', function listController($scope, $http) {
     $http.get('/data.json').then(function(res){
         $scope.artists = res.data.speakers;
-        $scope.artistOrder = "name";
+        $scope.speakers= true;
     }, function(result){
-        console.log('http request failed with result: ' + result);
+        console.log('http request failed with result: ' + res);
+    });
+}]);
+
+artistControllers.controller('listControllerDetails', ['$scope', '$http', '$route', '$routeParams', function listController($scope, $http, $route, $routeParams) {
+    $http.get('/data.json').then(function(res){
+        var param = $routeParams.speakerid;
+        var speakers = res.data.speakers;
+        var artists = [];
+        speakers.forEach(function(item){
+            if(item.shortname == param){
+                artists.push(item);
+            }
+        });
+        $scope.artists = artists;
+        $scope.details= true;
+    }, function(result){
+        console.log('http request failed with result: ' + res);
     });
 }]);

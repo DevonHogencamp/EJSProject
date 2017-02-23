@@ -8,15 +8,15 @@ myApp.config(['$routeProvider', function($routeProvider){
 
     .when('/home', {
         templateUrl: 'partials/home.ejs',
-        controller: 'listController'
+        controller: 'listControllerHome'
     })
     .when('/speakers', {
         templateUrl: 'partials/speakers.ejs',
-        controller: 'speakersController'
+        controller: 'listControllerSpeakers'
     })
     .when('/speakers/:speakerid', {
-        templateUrl: 'partials/content/speakerslist.ejs',
-        controller: 'listController'
+        templateUrl: 'partials/speakers.ejs',
+        controller: 'listControllerDetails'
     })
     .otherwise({
         redirectTo: '/home'

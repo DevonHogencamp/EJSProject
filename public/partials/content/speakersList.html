@@ -14,12 +14,14 @@
 
                 <p>
                     <a ng-href="#!/speakers/{{item.shortname}}">
-                        <img class="speaker" ng-src="/images/speakers/{{item.shortname}}_tn.jpg" alt="">
+                        <img class="speaker" ng-src="/images/speakers/{{item.shortname}}_tn.jpg">
                     </a>
-
-                    <ng-show ng-show="speakers">
-                        {{ item.description }}
-                    </ng-show>
+                        <ng-show ng-show="speakers">
+                            {{item.summary}}
+                        </ng-show>
+                        <ng-show ng-show="details">
+                            {{item.description}}
+                        </ng-show>
                 </p>
             </article>
         </div>
