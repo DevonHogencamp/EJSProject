@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<article class="speakerslist">
+<article class="{{ class }}">
     <section class="layout">
         <div class="speakers">
             <article class="artist group" ng-repeat="item in artists">
@@ -17,13 +17,8 @@
                         <img class="speaker" ng-src="/images/speakers/{{item.shortname}}_tn.jpg" alt="">
                     </a>
 
-                    <ng-show ng-show="window.location.href!='#!/home'">
-                        <!-- <ng-show ng-show="window.location.href!='#!/speakers'">
-                            {{item.summary}}
-                        </ng-show> -->
-                        <!-- <ng-show ng-show="window.location.href!='#!/speakers/{{item.shortname}}'">
-                            {{item.description}}
-                        </ng-show> -->
+                    <ng-show ng-show="speakers">
+                        {{ item.description }}
                     </ng-show>
                 </p>
             </article>

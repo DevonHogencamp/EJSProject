@@ -23,11 +23,10 @@
     <head>
         <% include partials/template/head.ejs %>
     </head>
-    <body class="<%= page %>">
+    <body class="">
         <% include partials/template/header.ejs %>
         <section class="layout">
             <div ng-view class="primary">
-                <%# %>
             </div>
             <aside class="secondary">
                 <% include partials/content/nextMeeting.ejs %>
@@ -35,7 +34,6 @@
                 <% include partials/content/artworkList.ejs %>
             </aside>
         </section>
-
 
         <% include partials/template/footer.ejs %>
         <% include partials/template/jsdefaults.ejs %>

@@ -12,7 +12,7 @@ myApp.config(['$routeProvider', function($routeProvider){
     })
     .when('/speakers', {
         templateUrl: 'partials/speakers.ejs',
-        controller: 'listController'
+        controller: 'speakersController'
     })
     .when('/speakers/:speakerid', {
         templateUrl: 'partials/content/speakerslist.ejs',
