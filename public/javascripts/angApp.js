@@ -12,7 +12,11 @@ myApp.config(['$routeProvider', function($routeProvider){
     })
     .when('/speakers', {
         templateUrl: 'partials/speakers.ejs',
+<<<<<<< HEAD
         controller: 'listControllerSpeakers'
+=======
+        controller: 'speakersController'
+>>>>>>> 3cbb1e09b9c0191c43a05e56764ff67ae69f76c3
     })
     .when('/speakers/:speakerid', {
         templateUrl: 'partials/speakers.ejs',
