@@ -1,7 +1,7 @@
 // Create a new module
 var artistControllers = angular.module('artistControllers', []);
 
-artistControllers.controller('listControllerHome', ['$scope', '$http', function listController($scope, $http) {
+artistControllers.controller('listControllerHome', ['$scope', '$http', function ($scope, $http) {
     $scope.class = 'speakerslist';
     $http.get('/data.json').then(function(res){
         $scope.artists = res.data.speakers;
@@ -12,7 +12,7 @@ artistControllers.controller('listControllerHome', ['$scope', '$http', function 
     });
 }]);
 
-artistControllers.controller('listControllerSpeakers', ['$scope', '$http', function listController($scope, $http) {
+artistControllers.controller('listControllerSpeakers', ['$scope', '$http', function ($scope, $http) {
     $http.get('/data.json').then(function(res){
         $scope.artists = res.data.speakers;
         $scope.speakers= true;
