@@ -16,13 +16,15 @@
                     <a ng-href="#!/speakers/{{item.shortname}}">
                         <img class="speaker" ng-src="/images/speakers/{{item.shortname}}_tn.jpg">
                     </a>
-                        <ng-show ng-show="speakers">
-                            {{item.summary}}
-                        </ng-show>
-                        <ng-show ng-show="details">
-                            <ng-bind-html ng-bind-html="item.description">
-                            </ng-bind-html>
-                        </ng-show>
+
+                    <ng-show ng-show="speakers">
+                        {{item.summary}}
+                    </ng-show>
+
+                    <ng-show ng-show="details">
+                        <ng-bind-html ng-bind-html="item.description">
+                        </ng-bind-html>
+                    </ng-show>
                 </p>
             </article>
         </div>
