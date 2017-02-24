@@ -20,7 +20,8 @@
                             {{item.summary}}
                         </ng-show>
                         <ng-show ng-show="details">
-                            {{item.description}}
+                            <ng-bind-html ng-bind-html="item.description">
+                            </ng-bind-html>
                         </ng-show>
                 </p>
             </article>

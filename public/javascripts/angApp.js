@@ -1,6 +1,7 @@
 var myApp = angular.module('myApp', [
     'ngRoute',
-    'artistControllers'
+    'artistControllers',
+    'ngSanitize'
 ]);
 
 myApp.config(['$routeProvider', function($routeProvider){
